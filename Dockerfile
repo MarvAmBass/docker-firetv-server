@@ -17,7 +17,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
  && pip install pyyaml \
  && pip install flask \
  && pip install firetv[firetv-server] \
- && pip install git+git://github.com/google/python-adb.git@master
+ && pip install --upgrade git+git://github.com/google/python-adb.git@master
 
 RUN echo "fix for newer firetv-server (use first adb to connect manually)" \
  \
