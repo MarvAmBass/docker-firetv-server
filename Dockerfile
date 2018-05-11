@@ -22,6 +22,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
 RUN echo "fix for newer firetv-server (use first adb to connect manually)" \
  \
  && pip install --upgrade git+git://github.com/google/python-adb.git@master \
+ && adb start-server \
  \
  && sed -i '70i\            signer = sign_m2crypto.M2CryptoSigner(op.expanduser("~/.android/adbkey"))' /usr/local/lib/python2.7/dist-packages/firetv/__init__.py \
  && sed -i '71i\            device = adb_commands.AdbCommands()' /usr/local/lib/python2.7/dist-packages/firetv/__init__.py \
